@@ -11,6 +11,7 @@ export const Container = styled.div`
 
     input::placeholder{
         color: #4d95c1;
+        font-size: 1.4em;
     }
 
     input{

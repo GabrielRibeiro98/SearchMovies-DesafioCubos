@@ -6,6 +6,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: row;
     background: #ebebeb;
+    
 
     h1{
         margin: 0px;
@@ -36,28 +37,7 @@ export const Container = styled.div`
         font-style: normal;
         font-weight: 400;
         font-display: swap;
-        margin-left: 17%;
-    }
-
-    button{
-        background-color: #116193;
-        border: none;
-        width: 25%;
-        color: black;
-        padding: 5px;
-        text-align: center;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition: 0.3s;
-        font-family: 'Lato';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-    }
-
-    button:hover{
-        background-color: #004875;
-        color: white;
+        margin-left: 8vw;
     }
 
     .header-movie{
@@ -71,8 +51,8 @@ export const Container = styled.div`
 
     .circle-popularity{
         border-radius: 50%;
-        width:70px;
-        height: 70px;
+        width:10vh;
+        height: 10vh;
         display: flex;
         justify-content:center;
         align-items:center;

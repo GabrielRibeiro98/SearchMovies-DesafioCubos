@@ -1,16 +1,36 @@
 import React from 'react';
-import {useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Container } from './styles'
 
 export default function Movie(props){
     const percent = props.vote_average * 10;
     const dispatch = useDispatch();
 
-    function handle(){
+    let baseURL = 'https://api.themoviedb.org/3/movie/';
+    let API_KEY = '689fb29fadf001bf3b533b3bf04ec7e0';
+
+    /*function handle(){
         dispatch({ type: 'MOVIE_ID', value: props.id })
+    }*/
+
+    async function handleSubmit() {
+        dispatch({ type: 'MOVIE_ID', value: props.id })
+            await fetch(`${baseURL}${props.id}?api_key=${API_KEY}`)
+                .then(data => data.json())
+                .then(data => {
+                    dispatch({ type: 'MOVIE_INFO_ARRAY', value: data})
+                    dispatch({ type: 'ADD_GENERO', value: data.genres})
+                });
+            await fetch(`${baseURL}${props.id}/videos?api_key=${API_KEY}`)
+                .then(data => data.json())
+                .then(data => {
+                    console.log(data.results[0].key)
+                    dispatch({ type: 'ADD_VIDEO', value: data.results})
+                });
     }
 
     return (
+        <a href="#" onClick={handleSubmit} style={{textDecoration: 'none'}}>
             <Container>
                     {
                         props.image != null ? <img  src={`https://image.tmdb.org/t/p/w200${props.image}`}/> : null
@@ -25,9 +45,9 @@ export default function Movie(props){
                         <section className="section-movie">
                             <p>{props.release_date}</p>
                             <h2> {props.overview} </h2>
-                            <button onClick={handle}>Informações do filme</button>
                         </section>
                     </div>
             </Container>
+        </a>
     );
 }

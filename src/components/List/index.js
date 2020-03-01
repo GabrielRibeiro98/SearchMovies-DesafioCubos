@@ -5,7 +5,7 @@ import Movie from '../movie/index';
 
 import { useSelector } from 'react-redux';
 
-export default function List(props){
+export default function List(){
     const movies = useSelector(state => state.data);
 
     return (

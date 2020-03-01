@@ -11,7 +11,7 @@ export default function Navigator(){
 
     return(
         <>
-            {id == -1 ? <>
+            {id === -1 ? <>
                 <Search/>
                 <List />
                 <Pagination />
