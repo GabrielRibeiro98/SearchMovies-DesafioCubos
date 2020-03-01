@@ -4,12 +4,10 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 
 import GlobalStyle from './styles/global';
-
 import { Container } from './styles/global';
 
-import Search from './components/search';
-import List from './components/List/index';
 import Header from './components/header/index';
+import Navigator from './components/navigator/index';
 
 function App() {
   return (
@@ -17,8 +15,7 @@ function App() {
       <Provider store={store}>
         <Container>
           <Header />
-          <Search/>
-          <List />
+          <Navigator />
         </Container>
         <GlobalStyle />
       </Provider>

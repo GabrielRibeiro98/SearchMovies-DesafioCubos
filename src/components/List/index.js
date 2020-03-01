@@ -14,13 +14,14 @@ export default function List(props){
                 {
                     movies.map((movie, i) => {
                         return (
-                            <Movie 
+                            <Movie
                                 key={i} 
+                                id={movie.id}
                                 image={movie.poster_path}
                                 title={movie.title}
                                 release_date={movie.release_date}
                                 overview={movie.overview}
-                                popularity={movie.popularity}
+                                vote_average={movie.vote_average}
                             />
                         )
                     })

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    @import url('https://fonts.googleapis.com/css?family=Abel|Lato&display=swap');
-
     margin-bottom:20px;
     margin-top:20px;
     display: flex;
@@ -11,24 +9,55 @@ export const Container = styled.div`
 
     h1{
         margin: 0px;
-        font-family: Lato;
+        font-family: 'Abel';
         font-style: normal;
-        font-size: 25px;
+        font-weight: 400;
+        font-display: swap;
+        font-size: 32px;
         color: #00e8e4;
-        margin-bottom:1px;
+        margin-bottom:5px;
     }
 
     h2{
-        margin: 0px;
+        margin-top:5%;
+        margin-left: 4%;
         padding: 5px;
-        font-family: Lato;
+        color:#707070;
+        font-family: 'Lato';
         font-style: normal;
-        font-size: 14px;
+        font-weight: 700;
+        font-display: swap;
+        font-size:16px;
     }
 
     p{
         margin-top:5px;
-        font-family: Lato;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+        margin-left: 17%;
+    }
+
+    button{
+        background-color: #116193;
+        border: none;
+        width: 25%;
+        color: black;
+        padding: 5px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition: 0.3s;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    button:hover{
+        background-color: #004875;
+        color: white;
     }
 
     .header-movie{
@@ -41,19 +70,34 @@ export const Container = styled.div`
     }
 
     .circle-popularity{
-        margin: 10px;
         border-radius: 50%;
-        width:50px;
-        height: 50px;
+        width:70px;
+        height: 70px;
         display: flex;
         justify-content:center;
         align-items:center;
-        background: violet;
-        margin-top:10px
+        background: #116193;
+        bottom: -35px;
+        position: relative;
+        margin-left:15px;
+        margin-right:15px;
+        border: 3px solid #00e8e4;
+        box-shadow: 0 0 0 3px #116193;
+    }
+
+    .percent{
+        font-size:23px;
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 300;
+        font-display: swap;font-family: Lato;
+        font-weight:200px;
+        color: #00e8e4;
     }
     
     .div-movie{
         width:100%;
+        height:100%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -62,8 +106,7 @@ export const Container = styled.div`
 
     .section-movie{
         width:100%;
-        display: flex;
+        display:flex;
         flex-direction: column;
-        justify-content: flex-start
     }
 `;
