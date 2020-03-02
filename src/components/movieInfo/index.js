@@ -4,8 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Container } from './styles';
 
 import Genero from '../genero/index';
-import styled from 'styled-components';
-
 
 export default function MovieInfo(){
     const infoMovie = useSelector( state => state.movieInfoData )
@@ -47,7 +45,7 @@ export default function MovieInfo(){
                             </article>
                             <article>
                                 <h3>Idioma</h3>
-                                <p>Info</p>
+                                <p> { infoMovie.original_language } </p>
                             </article>
                             <article>
                                 <h3>Duração</h3>
@@ -74,11 +72,14 @@ export default function MovieInfo(){
                         </div>
                     </section>
                     {
-                        infoMovie.poster_path != null ? <img  src={`https://image.tmdb.org/t/p/w300${infoMovie.poster_path}`}/> : null
+                        infoMovie.poster_path != null ? <img  src={`https://image.tmdb.org/t/p/w300${infoMovie.poster_path}`} alt="imginfo"/> : null
                     }
                 </div>
             </div>
-            <div style={{display:'flex', alignItems: 'center', justifyContent:'center',marginTop:'3vw'}}><iframe width="800" height="500" src={`http://www.youtube.com/embed/${trailerMovie}`}></iframe></div>
+            <div style={{display:'flex', alignItems: 'center', justifyContent:'center',marginTop:'3vw'}}>
+            <iframe title="trailer" width="560" height="315" src={`https://www.youtube.com/embed/${trailerMovie}`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
         </Container>
     );
 }

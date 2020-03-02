@@ -12,13 +12,15 @@ export default function Search(){
 
     async function handleSubmit(e) {
         e.preventDefault()
+        if(query === ''){
+            return alert('insira um valor');
+        }
         try{
             await fetch(`${baseURL}${API_KEY}&query=${query}`)
                 .then(data => data.json())
                 .then(data => {
                     dispatch({ type: 'STORE_MOVIES', value: data.results})
                     dispatch({ type: 'TOTAL_RESULTS', value:  data.total_results})
-                    dispatch({ type: 'TOTAL_PAGES', value: data.total_pages })
                 });
         }catch(error){
             alert(error)

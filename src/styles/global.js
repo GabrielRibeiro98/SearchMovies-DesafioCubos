@@ -2,7 +2,6 @@ import  styled, { createGlobalStyle} from 'styled-components';
 
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Abel|Lato&display=swap');
 
 * {
     margin: 0;

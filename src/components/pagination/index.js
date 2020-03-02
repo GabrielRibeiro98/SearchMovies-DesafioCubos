@@ -27,7 +27,7 @@ export default function Pagination(){
     }
 
     for(let i = 1; i <= numberPages; i++ ){
-        pageLinks.push(<li key={i} onClick={() => nextPage(i)}><a href="#" className="pagination">{i}</a></li>)
+        pageLinks.push(<li key={i} onClick={() => nextPage(i)}><a href="/#" className="pagination">{i}</a></li>)
     };
 
     return (
